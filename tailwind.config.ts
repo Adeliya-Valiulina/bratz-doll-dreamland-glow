@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				bratz: {
+					pink: '#FF4384',
+					purple: '#BF4BBA',
+					black: '#000000',
+					white: '#FFFFFF',
+					silver: '#E5E7EB',
 				}
 			},
 			borderRadius: {
@@ -84,12 +92,30 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				shimmer: {
+					'0%': {
+						backgroundPosition: '-200% 0',
+					},
+					'100%': {
+						backgroundPosition: '200% 0',
+					},
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'shimmer': 'shimmer 3s infinite',
+				'float': 'float 4s ease-in-out infinite',
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'star-pattern': 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M12 0L14.59 8.59L23.18 11.18L14.59 13.77L12 22.36L9.41 13.77L0.82 11.18L9.41 8.59L12 0Z\' fill=\'%23FF4384\'/%3E%3C/svg%3E")',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
